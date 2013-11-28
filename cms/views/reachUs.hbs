@@ -1,0 +1,57 @@
+<div id="content">
+  <div id="leftBox">
+    <div id="pageIntro">
+      <h2> Welcome to VictoryNet Technology </h2>
+      <p></p>
+    </div>
+    <div class="contentBox">
+      <div class="contentBoxTop">
+        <h3> <span id="lblTitle">Manage Testimonial </span> </h3>
+      </div>
+      <div class="innerContent">
+	      
+      <div style="margin-top:10px;"></div>
+{{#if msg}}
+<div style='color:red;font-size:18px'>{{msg}}</div>
+{{/if}}
+<table>
+ <thead>
+   <tr>
+    <th>Name</th>
+	<th>Email</th>
+	<th>Contact</th>
+	<th>Country</th>
+	 <th>Subject</th>
+	<th>Message</th>
+	<th>Created Date</th>
+	<th>Admin</th>
+   </tr>
+ </thead>
+ 
+ <tbody>
+ {{#each users}}
+   <tr>
+    <td>{{{ContactName}}}</td>
+	<td>{{{ContactEmail}}}</td>
+	<td>{{{ContactTelephone}}}</td>
+	<td>{{{ContactCountry}}}</td>
+	<td>{{{ContactSubject}}}</td>
+	<td>{{{ContactMessage}}}</td>
+	<td>{{{CreatedDate}}}</td>
+	<td>
+	<p style='text-align:center;'><a href='edit-reachUs?id={{{ContactId}}}' class='anchr' ><img src='images/icon_edit.gif' alt='Edit' border='0' /></a>
+	<a href='reach-us?dl={{{ContactId}}}' class='anchr'><img src='images/icon_delete.gif' alt='Delete' border='0' /></a></p>
+	</td>
+	
+   </tr>
+   {{else}}
+   no data
+  {{/each}}
+ </tbody>
+
+</table>
+
+   </div>
+  </div>
+ </div>
+</div>

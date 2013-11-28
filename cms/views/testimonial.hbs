@@ -1,0 +1,50 @@
+<div id="content">
+  <div id="leftBox">
+    <div id="pageIntro">
+      <h2> Welcome to VictoryNet Technology </h2>
+      <p></p>
+    </div>
+    <div class="contentBox">
+      <div class="contentBoxTop">
+        <h3> <span id="lblTitle">Manage Testimonial </span> </h3>
+      </div>
+      <div class="innerContent">
+	   <a href="create-testimonial"  style="font-weight:bold;color:#c5a393;font-size:14px;">Add New Testimonial Data</a>    
+      <div style="margin-top:10px;"></div>
+{{#if msg}}
+<div style='color:red;font-size:18px'>{{msg}}</div>
+{{/if}}
+<table>
+ <thead>
+   <tr>
+    <th>Description</th>
+	<th>Position</th>
+	<th>Name</th>
+	<th>Created Date</th>
+	<th>Admin</th>
+   </tr>
+ </thead>
+ 
+ <tbody>
+ {{#each users}}
+   <tr>
+    <td>{{{TestimonialDescription}}}</td>
+	<td>{{{PersonPosition}}}</td>
+	<td>{{{PersonName}}}</td>
+	<td>{{{CreatedDate}}}</td>
+	<td>
+	<p style='text-align:center;'><a href='edit-testimonial?id={{{TestimonialId}}}' class='anchr' ><img src='images/icon_edit.gif' alt='Edit' border='0' /></a>
+	<a href='testimonial?dl={{{TestimonialId}}}' class='anchr'><img src='images/icon_delete.gif' alt='Delete' border='0' /></a></p>
+	</td>
+   </tr>
+   {{else}}
+   no data
+  {{/each}}
+ </tbody>
+
+</table>
+
+   </div>
+  </div>
+ </div>
+</div>
